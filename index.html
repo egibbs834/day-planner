@@ -19,8 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <script src="moment.js"></script>
+
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,81 +27,131 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
       <label id="now"></label>
-    </header>     
+    </header>
     <div class="container">
       <div class="row">
-        <div class="hour col-md-2"><br>9a</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="0900">
+          <br />9a
         </div>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="0"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="0">save</button>
       </div>
       <div class="row">
-        <div class="hour col-md-2"><br>10a</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="1000">
+          <br />10a
         </div>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="1"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="1">save</button>
       </div>
       <div class="row">
-        <div class="hour col-md-2"><br>11a</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="1100">
+          <br />11a
         </div>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="2"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="2">save</button>
       </div>
       <div class="row">
-        <div class="hour col-md-2"><br>12p</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="1200">
+          <br />12p
         </div>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="3"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="3">save</button>
       </div>
       <div class="row">
-        <div class="hour col-md-2"><br>1p</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="1300">
+          <br />1p
         </div>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="4"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="4">save</button>
       </div>
       <div class="row">
-        <div class="hour col-md-2"><br>2p</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="1400">
+          <br />2p
         </div>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="5"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="5">save</button>
       </div>
       <div class="row">
-        <div class="hour col-md-2"><br>3p</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="1500">
+          <br />3p
         </div>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="6"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="6">save</button>
       </div>
       <div class="row">
-        <div class="hour col-md-2"><br>4p</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <div class="hour col-md-2" id="time-block" data-time="1600">
+          <br />4p
         </div>
-        <div class="hour col-md-2"><br>5p</div>
-        <textarea name="time-block" class="time-block col-md-8" id="time-block" cols="30" rows="10"></textarea>
-        <div class="saveBtn col-md-2">
-          <button>save</button>
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="7"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="7">save</button>
+      </div>
+      <div class="row">
+        <div class="hour col-md-2" id="time-block" data-time="1700">
+          <br />5p
         </div>
-      </div>            
+        <textarea
+          name="time-block"
+          class="time-block col-md-8"
+          id="8"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="saveBtn col-md-2" value="8">save</button>
+      </div>   
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js">
-    
-    // below is the 20th way I've tried to get the date/time displayed
-    var now = moment();
-
-    $("#now").text(now.format("lll"));
-    console.log(now);
-    console.log(now.text);
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

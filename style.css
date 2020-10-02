@@ -79,3 +79,8 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+img {
+  max-width:100%;
+  height:auto;
+}

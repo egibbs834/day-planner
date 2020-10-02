@@ -1,18 +1,41 @@
-// const moment = require("./moment")
+    // moment.js current date displayed at top of page
+$("#currentDay").append(moment().format("dddd, MMMM Do, YYYY"));
 
-console.log('this working?')
-
-// document.getElementById('currentDay').innterHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
-
-// const moment = require('moment');
-// const d = new Date('2020/08/01');
-// moment(d).format('MMMM d, YYYY'); 
-// console.log(d);
-// console.log(moment);
-
-// var currentDay = document.getElementById("currentDay");
-// var d = new Date();
-// console.log(d);
-// currentDay.text = d;
-
-
+// setting time for each hour 
+const time = parseInt(moment().format("HH00"), 10);
+for (var i = 0; i < $("textarea").length; i++) {
+    // get the current hour block and making it a JQuery object (with out rewarpping into a JQuery, we would only be grabbing element; this now lets us call data within that element)
+    // var hour = $($(".hour")[i]);
+    var hour = $($(".hour")[i]).next();
+    console.log(hour);
+    var actualTime = parseInt($($(".hour")[i]).data().time, 10);
+    
+    // check actual time
+    if (actualTime === time) {
+        hour.addClass("present");
+    } else if (actualTime < time) {
+        hour.addClass("past");
+    } else {
+        hour.addClass("future");
+    }
+}
+ 
+// grab from local storage
+$(document).ready(render());
+ 
+// save to local storage
+$(".saveBtn").on("click", function () {
+    const userEvent = $(this).prev().val();
+    const btn = $(this).val()
+    localStorage.setItem(btn, userEvent);
+    render();
+})
+ 
+// grab from local storage and place in time block
+function render() {
+    for (let i = 0; i < 9; i++) {
+        const oneEvent = localStorage.getItem(i);
+        $("#" + i).text(oneEvent);
+        console.log(oneEvent);
+    }
+}
