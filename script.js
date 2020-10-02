@@ -4,8 +4,6 @@ $("#currentDay").append(moment().format("dddd, MMMM Do, YYYY"));
 // setting time for each hour 
 const time = parseInt(moment().format("HH00"), 10);
 for (var i = 0; i < $("textarea").length; i++) {
-    // get the current hour block and making it a JQuery object (with out rewarpping into a JQuery, we would only be grabbing element; this now lets us call data within that element)
-    // var hour = $($(".hour")[i]);
     var hour = $($(".hour")[i]).next();
     console.log(hour);
     var actualTime = parseInt($($(".hour")[i]).data().time, 10);
